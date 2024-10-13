@@ -9,13 +9,13 @@ public class Bomb : PoolableObjects<Bomb>
     private float _radius = 10f;
     private float _force = 500f;
     private int _valueRandomLifeBomb;
+    private int _minValueLife = 2;
+    private int _maxValueLife = 5;
 
     private void Awake()
     {
         _renderer = GetComponent<Renderer>();
-        int minValueRandom = 0;
-        int maxValueRandom = 3;
-        _valueRandomLifeBomb = Random.Range(minValueRandom, maxValueRandom + 1);
+        _valueRandomLifeBomb = Random.Range(_minValueLife, _maxValueLife + 1);
     }
 
     private void OnEnable()
